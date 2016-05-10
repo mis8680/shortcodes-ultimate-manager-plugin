@@ -5,7 +5,7 @@
 
  Description: For shortcode utility manager
 
- Version: 1.0
+ Version: 0.0.1
 
  Author: Insu Mun
 
@@ -19,10 +19,10 @@ if (!defined('ABSPATH')) {
     exit();
 }
 
-class TenzingShortcodesManager
+class ShortcodesUltimateManager
 {
     /**
-     * TenzingShortcodesManager constructor.
+     * ShortcodesUltimateManager constructor.
      */
     public function __construct()
     {
@@ -107,7 +107,7 @@ class TenzingShortcodesManager
                 }
             </style>
             <div class="wrap">
-                <h2>Tenzing Shortcode Manager</h2>
+                <h2>Shortcode Ultimate Manager</h2>
                 <h3 style="color:red;">Please check the shortcode items you want to hide in user interface</h3>
                 <form class="shortcode-manager-form" method="post" action="admin-post.php">
                     <input type="hidden" name="action" value="tsm_click_hook"/>
@@ -148,5 +148,5 @@ class TenzingShortcodesManager
     }
 }
 
-$tsm = new TenzingShortcodesManager();
+$tsm = new ShortcodesUltimateManager();
 ?>
