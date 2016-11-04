@@ -127,14 +127,14 @@ class ShortcodesUltimateManager
                             echo '</label>';
                         }
                     } else {
-                        foreach ($shortcodes as $name => $value) {
+                        foreach ($shortcodes as $name => $shortcode) {
                             echo '<label>';
                             echo '<input type="checkbox" name="suItems[]" value="' . $name . '" id="' . $name . '" class="tsm_items"/>';
+                            $icon = (isset($shortcode['icon'])) ? $shortcode['icon'] : 'puzzle-piece';
+                            $shortcode['name'] = (isset($shortcode['name'])) ? $shortcode['name'] : $name;
+                            echo '<span data-name="' . $shortcode['name'] . '" data-shortcode="' . $name . '" title="' . esc_attr($shortcode['desc']) . '" data-desc="' . esc_attr($shortcode['desc']) . '" data-group="' . $shortcode['group'] . '">' . Su_Tools::icon($icon) . $shortcode['name'] . '</span>' . "\n";
+                            echo '</label>';
                         }
-                        $icon = (isset($shortcode['icon'])) ? $shortcode['icon'] : 'puzzle-piece';
-                        $shortcode['name'] = (isset($shortcode['name'])) ? $shortcode['name'] : $name;
-                        echo '<span data-name="' . $shortcode['name'] . '" data-shortcode="' . $name . '" title="' . esc_attr($shortcode['desc']) . '" data-desc="' . esc_attr($shortcode['desc']) . '" data-group="' . $shortcode['group'] . '">' . Su_Tools::icon($icon) . $shortcode['name'] . '</span>' . "\n";
-                        echo '</label>';
                     }
                     ?>
                     <div class="clear"></div>
